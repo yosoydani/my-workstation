@@ -30,9 +30,11 @@ echo "################################################################"
 echo
 
 
-# ./software/install-google-chrome.sh
-# ./software/install-visual-studio-code.sh
-# ./software/install-gitkraken.sh
+./software/install-google-chrome.sh
+./software/install-visual-studio-code.sh
+./software/install-gitkraken.sh
+./software/install-virtualbox.sh
+
 
 echo
 echo "################################################################"
