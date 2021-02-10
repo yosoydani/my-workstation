@@ -38,6 +38,8 @@ echo
 ./software/install-git.sh
 ./software/install-anydesk.sh
 ./software/install-curl.sh
+./software/install-docker.sh
+
 
 
 
