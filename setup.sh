@@ -36,6 +36,8 @@ echo
 ./software/install-virtualbox.
 ./software/install-dbeaver.sh
 ./software/install-git.sh
+./software/install-anydesk.sh
+
 
 
 echo
