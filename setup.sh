@@ -37,6 +37,7 @@ echo
 ./software/install-dbeaver.sh
 ./software/install-git.sh
 ./software/install-anydesk.sh
+./software/install-curl.sh
 
 
 
