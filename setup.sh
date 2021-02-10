@@ -33,7 +33,8 @@ echo
 ./software/install-google-chrome.sh
 ./software/install-visual-studio-code.sh
 ./software/install-gitkraken.sh
-./software/install-virtualbox.sh
+./software/install-virtualbox.
+./software/install-dbeaver.sh
 
 
 echo
