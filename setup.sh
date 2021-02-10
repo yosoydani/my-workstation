@@ -35,6 +35,7 @@ echo
 ./software/install-gitkraken.sh
 ./software/install-virtualbox.
 ./software/install-dbeaver.sh
+./software/install-git.sh
 
 
 echo
