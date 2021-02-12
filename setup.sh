@@ -40,7 +40,7 @@ echo
 ./software/install-curl.sh
 ./software/install-docker.sh
 ./software/install-htop.sh
-
+./software/install-file-systems.sh
 
 
 
