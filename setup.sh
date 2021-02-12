@@ -39,6 +39,8 @@ echo
 ./software/install-anydesk.sh
 ./software/install-curl.sh
 ./software/install-docker.sh
+./software/install-htop.sh
+
 
 
 
