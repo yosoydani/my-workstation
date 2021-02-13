@@ -44,6 +44,7 @@ echo
 ./software/install-filezilla.sh
 ./software/install-gnome-applications.sh
 ./software/install-net-tools.sh
+./software/install-traceroute.sh
 
 
 
