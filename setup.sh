@@ -46,6 +46,8 @@ echo
 ./software/install-net-tools.sh
 ./software/install-traceroute.sh
 ./software/install-nvm.sh
+./software/install-remmina.sh
+
 
 
 echo
