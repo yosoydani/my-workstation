@@ -13,5 +13,4 @@ if ! repository=$(echo "$repositories" | grep "dl.google.com"); then
 fi
 if ! location=$(type -p "google-chrome-stable"); then
     sudo apt install -y google-chrome-stable
-    sudo add-apt-repository -y -r "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 fi
