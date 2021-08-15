@@ -2,10 +2,10 @@
 
 echo
 echo "################################################################"
-echo "  Installing Virtualbox                                         "
+echo "  Installing Postman                                               "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "virtualbox"); then
-    sudo apt install -y virtualbox
+if ! location=$(type -p "postman"); then
+  	snap install postman
 fi

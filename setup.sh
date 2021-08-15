@@ -29,26 +29,26 @@ echo "  Installing requirements for repositories                      "
 echo "################################################################"
 echo
 
+cd software
+sh install-google-chrome.sh
+sh install-visual-studio-code.sh
+sh install-gitkraken.sh
+sh install-virtualbox.sh
+sh install-dbeaver.sh
+sh install-git.sh
+sh install-anydesk.sh
+sh install-curl.sh
+sh install-docker.sh
+sh install-htop.sh
+sh install-file-systems.sh
+sh install-filezilla.sh
+sh install-gnome-applications.sh
+sh install-net-tools.sh
+sh install-traceroute.sh
+sh install-nvm.sh
+sh install-remmina.sh
 
-./software/install-google-chrome.sh
-./software/install-visual-studio-code.sh
-./software/install-gitkraken.sh
-./software/install-virtualbox.
-./software/install-dbeaver.sh
-./software/install-git.sh
-./software/install-anydesk.sh
-./software/install-curl.sh
-./software/install-docker.sh
-./software/install-htop.sh
-./software/install-file-systems.sh
-./software/install-filezilla.sh
-./software/install-gnome-applications.sh
-./software/install-net-tools.sh
-./software/install-traceroute.sh
-./software/install-nvm.sh
-./software/install-remmina.sh
-
-
+cd ..
 
 echo
 echo "################################################################"
