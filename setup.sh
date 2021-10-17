@@ -47,6 +47,8 @@ sh install-net-tools.sh
 sh install-traceroute.sh
 sh install-nvm.sh
 sh install-remmina.sh
+sh install-flameshot.sh
+
 
 cd ..
 
