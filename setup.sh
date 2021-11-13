@@ -1,5 +1,7 @@
-#/bin/bahs
+# #/bin/bahs
+
 # Fail inmediately if anny erros occur
+
 set -e
 echo
 echo "################################################################"
@@ -14,7 +16,9 @@ echo "################################################################"
 echo "  Updating the system                                           "
 echo "################################################################"
 echo
+
 # Upgrade
+
 sudo apt update
 sudo apt full-upgrade -y
 echo
@@ -41,17 +45,9 @@ sh install-traceroute.sh
 sh install-nvm.sh
 sh install-remmina.sh
 sh install-flameshot.sh
-
 cd ..
 
-echo
-echo "################################################################"
-echo "  Creating code folder                                          "
-echo "################################################################"
-echo
-
-cd ~
-mkdir code
+#Docker images
 
 echo
 echo "################################################################"
@@ -60,3 +56,27 @@ echo "################################################################"
 echo
 
 docker build -t local-php ./images/php/
+
+#alias
+
+echo
+echo "################################################################"
+echo "  Creating alias                                                "
+echo "################################################################"
+echo
+
+
+cp .bash_aliases ~
+
+echo "Actualiza los alias ejecutando source .bash_aliases"
+
+# directorio code
+
+echo
+echo "################################################################"
+echo "  Creating code folder                                          "
+echo "################################################################"
+echo
+cd ~
+mkdir code
+
