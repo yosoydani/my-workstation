@@ -1,0 +1,4 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true
+}
