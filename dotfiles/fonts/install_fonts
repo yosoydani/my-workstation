@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Verificar si la fuente Fira Code está instalada
+if fc-list | grep -q "Fira Code"; then
+    echo "La fuente Fira Code ya está instalada."
+else
+    echo "La fuente Fira Code no está instalada. Intentando instalarla..."
+
+    # Actualizar la caché de fuentes
+    sudo fc-cache -f -v
+
+    # Instalar la fuente Fira Code (en sistemas basados en Debian/Ubuntu)
+    if sudo apt-get install fonts-firacode; then
+        echo "La fuente Fira Code se ha instalado con éxito."
+    else
+        echo "No se pudo instalar la fuente Fira Code. Verifica si tienes acceso a Internet y los permisos adecuados."
+    fi
+fi
+

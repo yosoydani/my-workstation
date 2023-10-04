@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-sudo apt install fonts-firacode
-
+$DOTFILES/fonts/install_fonts
 echo -- nvim config --
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+echo -- termux config --
+rm -rf $HOME/.tmux.conf
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
 echo -- .bash_aliases --
 rm -f $HOME/.bash_aliases
@@ -13,12 +16,12 @@ ln -s $DOTFILES/bash/.bash_aliases $HOME/.bash_aliases
 source $HOME/.bash_aliases
 
 echo -- vscode config --
-rm -f $HOME/.config/Code/User/settings.json
-rm -f $HOME/.config/Code/User/keybindings.json
+rm -f $HOME/.config/Code/User/settings.js
+rm -f $HOME/.config/Code/User/keybindings.js
 rm -rf $HOME/.config/Code/User/snippets
 rm -rf $HOME/.vscode/extensions
 
-ln -s $DOTFILES/vscode/settings.js $HOME/.config/Code/User/settings.json
-ln -s $DOTFILES/vscode/keybindings.js $HOME/.config/Code/User/keybindings.json
+ln -s $DOTFILES/vscode/settings.js $HOME/.config/Code/User/settings.js
+ln -s $DOTFILES/vscode/keybindings.js $HOME/.config/Code/User/keybindings.js
 ln -s $DOTFILES/vscode/snippets $HOME/.config/Code/User/snippets
 ln -s $DOTFILES/vscode/extensions $HOME/.vscode/extensions

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo
+echo "################################################################"
+echo "  Installing Neofetch                                               "
+echo "################################################################"
+echo
+
+if ! location=$(type -p "neofetch"); then
+	sudo apt install -y neofetch
+	if ! location=$(type -p "neofetch"); then
+    	echo "No se pudo instalar tmux. Verifica si tienes acceso a Internet y los permisos adecuados."
+	else
+    	echo "tmux se ha instalado con éxito."
+	fi
+else
+    echo "tmux ya está instalado."
+fi

@@ -1,4 +1,6 @@
-# #/bin/bahs
+# #/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Fail inmediately if anny erros occur
 
@@ -45,6 +47,8 @@ sh install-traceroute.sh
 sh install-nvm.sh
 sh install-remmina.sh
 sh install-flameshot.sh
+install-tmux
+install-neofetch
 cd ..
 
 #Docker images
@@ -55,20 +59,17 @@ echo "  Creating local php image                                      "
 echo "################################################################"
 echo
 
-docker build -t local-php ./images/php/
+#docker build -t local-php ./images/php/
 
-#alias
+#configuraciones
 
 echo
 echo "################################################################"
-echo "  Creating alias                                                "
+echo "  Instalando configuraciones                                    "
 echo "################################################################"
 echo
 
-
-cp .bash_aliases ~
-
-echo "Actualiza los alias ejecutando source .bash_aliases"
+$DIR/dotfiles/install
 
 # directorio code
 
