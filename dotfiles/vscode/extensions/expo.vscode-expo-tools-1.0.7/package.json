@@ -1,0 +1,284 @@
+{
+	"name": "vscode-expo-tools",
+	"displayName": "Expo Tools",
+	"version": "1.0.7",
+	"description": "Expo for VS Code keeps you productive with debugging, IntelliSense and prebuild previews",
+	"keywords": [
+		"expo",
+		"eas",
+		"build",
+		"metadata",
+		"submit",
+		"vscode"
+	],
+	"license": "MIT",
+	"author": {
+		"email": "npm@cedric.dev",
+		"name": "Cedric van Putten",
+		"url": "https://cedric.dev"
+	},
+	"homepage": "https://github.com/expo/vscode-expo",
+	"bugs": {
+		"url": "https://github.com/expo/vscode-expo/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/expo/vscode-expo"
+	},
+	"main": "./out/src/extension.js",
+	"scripts": {
+		"postinstall": "patch-package",
+		"vscode:prepublish": "yarn clean && yarn build:production",
+		"start": "tsc -watch -p ./",
+		"build": "tsc -p ./",
+		"build:production": "webpack --mode production",
+		"clean": "git clean -xdf ./out ./.vscode-test *tsbuildinfo",
+		"test:vscode": "node ./out/test/jest/cli.js",
+		"test:scripts": "jest --config jest.scripts.js",
+		"lint": "eslint .",
+		"install:fixture": "yarn install --cwd ./test/fixture"
+	},
+	"devDependencies": {
+		"@expo/config-plugins": "^4.1.5",
+		"@expo/json-file": "^8.2.36",
+		"@expo/prebuild-config": "^4.0.3",
+		"@semantic-release/changelog": "^6.0.1",
+		"@semantic-release/git": "^10.0.1",
+		"@sucrase/webpack-loader": "^2.0.0",
+		"@tsconfig/node16": "^1.0.3",
+		"@types/debug": "^4.1.7",
+		"@types/jest": "^26.0.23",
+		"@types/minimatch": "^3.0.5",
+		"@types/node": "^16.11.56",
+		"@types/node-fetch": "^2.6.2",
+		"@types/vscode": "^1.67.0",
+		"@typescript-eslint/eslint-plugin": "^5.48.0",
+		"@typescript-eslint/parser": "^5.48.0",
+		"@vscode/extension-telemetry": "^0.7.7",
+		"@vscode/test-electron": "^2.3.2",
+		"@vscode/vsce": "^2.16.0",
+		"arg": "^5.0.2",
+		"conventional-changelog-conventionalcommits": "^5.0.0",
+		"debug": "^4.3.4",
+		"eslint": "^8.31.0",
+		"eslint-config-universe": "^11.1.1",
+		"execa": "^5.1.1",
+		"find-up": "^5.0.0",
+		"jest": "^26.6.3",
+		"jest-circus": "^26.6.3",
+		"jest-environment-node": "^26.6.2",
+		"json-schema-traverse": "^1.0.0",
+		"json5": "^2.2.2",
+		"jsonc-parser": "^3.0.0",
+		"minimatch": "^3.0.4",
+		"node-fetch": "^2.6.7",
+		"ovsx": "^0.8.0",
+		"parent-module": "^2.0.0",
+		"patch-package": "^6.4.7",
+		"prettier": "^2.8.1",
+		"raw-loader": "^4.0.2",
+		"semantic-release": "^19.0.3",
+		"semver": "^7.5.2",
+		"sucrase": "^3.20.3",
+		"typescript": "^4.9.4",
+		"webpack": "^5.76.0",
+		"webpack-cli": "^4.7.0"
+	},
+	"publisher": "expo",
+	"icon": "images/logo-marketplace.png",
+	"engines": {
+		"vscode": "^1.67.0"
+	},
+	"categories": [
+		"Debuggers",
+		"Other"
+	],
+	"extensionKind": [
+		"workspace"
+	],
+	"extensionDependencies": [
+		"ms-vscode.js-debug"
+	],
+	"activationEvents": [
+		"workspaceContains:node_modules/expo",
+		"workspaceContains:**/node_modules/expo",
+		"onDebug",
+		"onDebugResolve:expo",
+		"onDebugInitialConfigurations",
+		"onDebugDynamicConfigurations:expo"
+	],
+	"contributes": {
+		"breakpoints": [
+			{
+				"language": "javascript"
+			},
+			{
+				"language": "javascriptreact"
+			},
+			{
+				"language": "typescript"
+			},
+			{
+				"language": "typescriptreact"
+			}
+		],
+		"commands": [
+			{
+				"category": "Expo",
+				"command": "expo.config.preview",
+				"title": "Preview config"
+			},
+			{
+				"category": "Expo",
+				"command": "expo.config.prebuild.preview",
+				"title": "Preview modifier"
+			},
+			{
+				"category": "Expo",
+				"command": "expo.config.prebuild.preview.json",
+				"title": "Preview modifier as JSON"
+			},
+			{
+				"category": "Expo",
+				"command": "expo.debug.start",
+				"title": "Debug Expo app on a device or simulator, using Hermes"
+			}
+		],
+		"configuration": {
+			"title": "Expo Tools",
+			"properties": {
+				"expo.appManifest.pluginValidation": {
+					"type": "boolean",
+					"default": true,
+					"scope": "resource",
+					"description": "Validate the config plugins in app manifests, listed under \"expo.plugins\". This only applies to \"app.json\" and \"app.config.json\" files.",
+					"markdownDescription": "Validate the config plugins in app manifests, listed under `expo.plugins`. This only applies to `app.json` and `app.config.json` files."
+				},
+				"expo.appManifest.fileReferences": {
+					"type": "boolean",
+					"default": true,
+					"scope": "resource",
+					"description": "Enable suggestions for file references in app manifests, like the splash screen. This only applies to \"app.json\" and \"app.config.json\" files.",
+					"markdownDescription": "Enable suggestions for file references in app manifests, like the splash screen This only applies to `app.json` and `app.config.json` files."
+				},
+				"expo.appManifest.fileReferences.excludeGlobPatterns": {
+					"type": "object",
+					"default": null,
+					"patternProperties": {
+						".*": {
+							"type": "boolean",
+							"default": true,
+							"description": "Enable or disable file references matching the glob pattern."
+						}
+					},
+					"scope": "resource",
+					"description": "Exclude file suggestions for file references in app manifest, using glob patterns."
+				}
+			}
+		},
+		"debuggers": [
+			{
+				"type": "expo",
+				"label": "Expo",
+				"languages": [
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact"
+				],
+				"configurationAttributes": {
+					"attach": {
+						"required": [],
+						"properties": {
+							"projectRoot": {
+								"type": "string",
+								"markdownDescription": "The workspace-relative path to your Expo project. If your project is not located in the workspace folder, change this to `${workspaceFolder}/apps/awesome-app`.",
+								"default": "${workspaceFolder}"
+							},
+							"bundlerHost": {
+								"type": "string",
+								"description": "The host of the Metro bundler.",
+								"default": "127.0.0.1"
+							},
+							"bundlerPort": {
+								"type": "string",
+								"description": "The port of the Metro bundler."
+							},
+							"trace": {
+								"type": "boolean",
+								"markdownDescription": "Trace may be set to `true` to write diagnostic logs to the disk.",
+								"default": false
+							},
+							"restart": {
+								"type": "boolean",
+								"markdownDescription": "Automatically try to reconnect to device when connection is lost.",
+								"default": false
+							},
+							"enableTurboSourcemaps": {
+								"type": "boolean",
+								"markdownDescription": "Use the faster sourcemap implementation to translate bundled code to actual code.",
+								"default": true
+							}
+						}
+					}
+				},
+				"configurationSnippets": [
+					{
+						"label": "Expo: Debug app on device or emulator",
+						"description": "Debug your Expo app on a connected device or emulator, using the Hermes engine.",
+						"body": {
+							"type": "expo",
+							"request": "attach",
+							"name": "Debug Expo app",
+							"projectRoot": "^\"\\${workspaceFolder}\"${1}",
+							"bundlerPort": "${2:8081}",
+							"bundlerHost": "${3:127.0.0.1}"
+						}
+					}
+				]
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": [
+					"app.json",
+					"app.config.json"
+				],
+				"url": "https://raw.githubusercontent.com/expo/vscode-expo/schemas/schema/expo-xdl.json"
+			},
+			{
+				"fileMatch": "store.config.json",
+				"url": "https://raw.githubusercontent.com/expo/vscode-expo/schemas/schema/eas-metadata.json"
+			},
+			{
+				"fileMatch": "expo-module.config.json",
+				"url": "https://raw.githubusercontent.com/expo/vscode-expo/schemas/schema/expo-module.json"
+			},
+			{
+				"fileMatch": "eas.json",
+				"url": "https://raw.githubusercontent.com/expo/vscode-expo/schemas/schema/eas.json"
+			}
+		],
+		"languages": [
+			{
+				"id": "jsonc",
+				"filenames": [
+					"app.json",
+					"app.config.json",
+					"eas.json"
+				]
+			}
+		]
+	},
+	"__metadata": {
+		"id": "b2c4b5bf-9bda-4c81-96b6-d2f28401c4fb",
+		"publisherId": "2c74c01a-7e57-4e1f-b5c6-7acc39bf2ecd",
+		"publisherDisplayName": "Expo",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1702928541384,
+		"pinned": false,
+		"preRelease": false
+	}
+}

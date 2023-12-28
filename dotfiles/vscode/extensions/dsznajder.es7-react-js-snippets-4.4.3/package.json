@@ -164,9 +164,11 @@
 		"publisherId": "7ea644b4-2d93-4979-aac5-a12afebeb762",
 		"publisherDisplayName": "dsznajder",
 		"targetPlatform": "undefined",
-		"updated": false,
+		"updated": true,
 		"isPreReleaseVersion": false,
-		"installedTimestamp": 1696356809853,
-		"preRelease": false
+		"installedTimestamp": 1703702306018,
+		"preRelease": false,
+		"isApplicationScoped": false,
+		"pinned": true
 	}
 }

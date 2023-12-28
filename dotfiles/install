@@ -10,11 +10,6 @@ echo -- termux config --
 rm -rf $HOME/.tmux.conf
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
-echo -- .bash_aliases --
-rm -f $HOME/.bash_aliases
-ln -s $DOTFILES/bash/.bash_aliases $HOME/.bash_aliases
-source $HOME/.bash_aliases
-
 echo -- vscode config --
 rm -f $HOME/.config/Code/User/settings.js
 rm -f $HOME/.config/Code/User/keybindings.js
@@ -25,3 +20,15 @@ ln -s $DOTFILES/vscode/settings.js $HOME/.config/Code/User/settings.js
 ln -s $DOTFILES/vscode/keybindings.js $HOME/.config/Code/User/keybindings.js
 ln -s $DOTFILES/vscode/snippets $HOME/.config/Code/User/snippets
 ln -s $DOTFILES/vscode/extensions $HOME/.vscode/extensions
+
+echo -- git
+
+rm -f $HOME/.gitignore
+
+ln -s $DOTFILES/git/.gitignore $HOME/.gitignore 
+git config --global core.excludesfile ~/.gitignore
+
+echo -- .bash_aliases --
+rm -f $HOME/.bash_aliases
+ln -s $DOTFILES/bash/.bash_aliases $HOME/.bash_aliases
+source $HOME/.bash_aliases

@@ -69,9 +69,11 @@
 		"publisherId": "9571ced8-1740-4abf-b33f-36df3eb7736b",
 		"publisherDisplayName": "Burke Holland",
 		"targetPlatform": "undefined",
-		"updated": false,
+		"updated": true,
 		"isPreReleaseVersion": false,
-		"installedTimestamp": 1696356820350,
-		"preRelease": false
+		"installedTimestamp": 1703702306010,
+		"preRelease": false,
+		"isApplicationScoped": false,
+		"pinned": true
 	}
 }

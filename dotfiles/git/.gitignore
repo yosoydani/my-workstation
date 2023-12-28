@@ -1,0 +1,18 @@
+# Node
+npm-debug.log
+
+# Windows
+Thumbs.db
+
+# WebStorm
+.idea/
+
+# vscode
+.vscode/
+
+# vi
+*~
+
+# General
+log/
+*.log
