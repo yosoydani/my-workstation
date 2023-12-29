@@ -1,0 +1,126 @@
+[
+  // enfoca el explorador
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
+  },
+  // lista el contenido de los archivos
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "sideBarFocus"
+  },
+  // oculta la barra de actividad, no funciona por la extensión Activiti Bar
+  //{
+  //  "key": "ctrl+shift+1",
+  //  "command": "workbench.action.toggleActivityBarVisibility"
+  //},
+  // Oculta la barra de estado
+  {
+    "key": "ctrl+shift+2",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
+  // crea un archivo
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  },
+  // crea una carpeta
+  {
+    "key": "ctrl+alt+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  // renombra un archivo
+  {
+    "key": "f2",
+    "command": "renameFile",
+    "when": "explorerViewletFocus"
+  },
+  // vuelve al editor
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
+  },
+  // abre el terminal
+  {
+    "key": "ctrl+alt+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // copia una linea
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // borra las notificaciones
+  {
+    "key": "ctrl+alt+m",
+    "command": "notifications.clearAll"
+  },
+  // mostar archivos recientes
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.showAllEditorsByMostntlyUsed"
+  },
+  // navegar a definiciones
+  {
+    "key": "ctrl+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "comm and": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  // mover lineas
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // selecccionar
+  {
+    "key": "alt+up",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+u",
+    "command": "cursorUndo",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-cursorUndo",
+    "when": "textInputFocus"
+  }
+]

@@ -11,13 +11,13 @@ rm -rf $HOME/.tmux.conf
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
 echo -- vscode config --
-rm -f $HOME/.config/Code/User/settings.js
-rm -f $HOME/.config/Code/User/keybindings.js
+rm -f $HOME/.config/Code/User/settings.json
+rm -f $HOME/.config/Code/User/keybindings.json
 rm -rf $HOME/.config/Code/User/snippets
 rm -rf $HOME/.vscode/extensions
 
-ln -s $DOTFILES/vscode/settings.js $HOME/.config/Code/User/settings.js
-ln -s $DOTFILES/vscode/keybindings.js $HOME/.config/Code/User/keybindings.js
+ln -s $DOTFILES/vscode/settings.json $HOME/.config/Code/User/settings.json
+ln -s $DOTFILES/vscode/keybindings.json $HOME/.config/Code/User/keybindings.json
 ln -s $DOTFILES/vscode/snippets $HOME/.config/Code/User/snippets
 ln -s $DOTFILES/vscode/extensions $HOME/.vscode/extensions
 
