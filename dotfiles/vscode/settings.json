@@ -30,7 +30,7 @@
   },
   "editor.codeActionsOnSave": {
     "source.addMissingImports": "explicit",
-    "source.fixAll.eslint": "never"
+    "source.fixAll.eslint": "always"
   },
 
   // explorador
@@ -163,7 +163,8 @@
       "name": "settings",
       "codicon": "gear"
     }
-  ]
+  ],
+  "eslint.format.enable": true
 
   // cambios de vscode
 }
